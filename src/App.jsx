@@ -14,22 +14,84 @@ import "./App.css";
 const FALLBACK_CONTACTS = [
     {
         id: 1,
-        name: "Ada Lovelace",
-        phone: "(555) 010-0101",
-        email: "ada@example.com",
+        name: "Joe's Pizza",
+        phone: "(212) 366-1182",
+        email: "joespizzanyc@gmail.com",
+        photo:"🍕",
+        category: "Restaurant"
     },
     {
         id: 2,
-        name: "Alan Turing",
-        phone: "(555) 010-0102",
-        email: "alan@example.com",
+        name: "Super Mario Bros. Plumbing",
+        phone: "(929) 556-2746",
+        email: "mariobros@nintendo.com",
+        photo:"🔧",
+        category:"Home Services"
     },
     {
         id: 3,
-        name: "Grace Hopper",
-        phone: "(555) 010-0103",
-        email: "grace@example.com",
+        name: "Dominican Hair Salon",
+        phone: "(929) 010-0103",
+        email: "dominicanhairsalon@gmail.com",
+        photo:"💇🏽‍♀️",
+        category:"Personal Care"
     },
+    {
+        id: 4,
+        name: "Astoria Auto Repair",
+        phone: "(917) 212-5555",
+        email: "astoriacar@gmail.com",
+        photo: "🚗",
+        category: "Auto"
+    },
+    {
+        id: 5,
+        name: "Central Perk Cafe",
+        phone: "(212) 555-2368",
+        email: "centrelperk@gmail.com",
+        photo: "☕️",
+        category: "Restaurant"
+    },
+    {
+        id: 6,
+        name: "Dr. Smith's Dental",
+        phone: "(516) 545-2786",
+        email: "smithdental@gmail.com",
+        photo: "🦷",
+        category: "Medical"
+    },
+    {
+        id: 7,
+        name: "Ace Hardware Store",
+        phone: "(212) 516-3478",
+        email: "acehardware@gmail.com",
+        photo: "🛠️",
+        category: "Retail"
+    },
+    {
+        id: 8,
+        name: "Stacies Pet Grooming",
+        phone: "(212) 675-8273",
+        email: "staciesgrooming@gmail.com",
+        photo: "🐶",
+        category: "Pet Services"
+    },
+    {
+        id: 9,
+        name: "Happy Dry Cleaner",
+        phone: "(212) 351-8164",
+        email: "happycleanersk@gmail.com",
+        photo: "👕",
+        category: "Services"
+    },
+    {
+        id: 10,
+        name: "Chase Bank",
+        phone: "(212) 645-0896",
+        email: "jpmorgan@gmail.com",
+        photo: "🏦",
+        category: "Financial"
+    }
 ];
 
 const App = () => {
