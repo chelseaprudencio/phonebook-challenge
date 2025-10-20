@@ -42,12 +42,26 @@
 }
 
 .btn {
-    border-radius: 8px;
-    border: 1px solid #3a3a3a;
-    padding: 0.5rem 0.9rem;
-    background: #1a1a1a;
-    color: inherit;
+    border-radius: 6px;
+    border: 2px solid var(--border);
+    padding: 0.6rem 1.2rem;
+    background: var(--accent);
+    color: #000;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 .theme {
