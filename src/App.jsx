@@ -132,7 +132,7 @@ const App = () => {
 
             <footer className="page__footer">
                 <small>
-                    Yellow Book Directory - A vintage contact directory app * Established in the Gen Z's prime @ 2025 * NYC
+                    Yellow Book Directory * A vintage contact directory app * Established in the Gen Z's prime @ 2025 * NYC
                 </small>
             </footer>
         </main>
