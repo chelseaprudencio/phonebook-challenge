@@ -1,3 +1,13 @@
+/** 
+ * Phonebook Challenge 
+ * Theme: Yellow Book Directory
+ * Desc: vintage Yellow Book theme. aiming for retro vibes
+ * 
+ * h1 - Yellow Book Directory
+ * h2 - Like the ones in the movie
+ * h3 - names and contact info 
+ */
+
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
@@ -45,7 +55,7 @@ const App = () => {
             </header>
 
             <section className="search" aria-labelledby="search-heading">
-                <h2 id="search-heading">Search Contacts</h2>
+                <h2 id="search-heading">Find Business</h2>
                 <div className="search__controls">
                     <label htmlFor="search-input">Search</label>
                     <input
@@ -67,11 +77,13 @@ const App = () => {
             </section>
 
             <section className="contacts" aria-labelledby="contacts-heading">
-                <h2 id="contacts-heading">Contacts</h2>
+                <h2 id="contacts-heading">Businesses</h2>
+                <ul className="contacts__grid" role="list">
+                </ul>   
             </section>
 
             <section className="form" aria-labelledby="form-heading">
-                <h2 id="form-heading">Add a Contact</h2>
+                <h2 id="form-heading">Add a Business</h2>
                 <form className="form__body" onSubmit={handleSubmit} noValidate>
                     <div className="field">
                         <label htmlFor="name">Name</label>
@@ -120,8 +132,7 @@ const App = () => {
 
             <footer className="page__footer">
                 <small>
-                    Starter provided. Complete tasks per README and make this page
-                    shine.
+                    Yellow Book Directory - A vintage contact directory app * Established in the Gen Z's prime @ 2025 * NYC
                 </small>
             </footer>
         </main>
