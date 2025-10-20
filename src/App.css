@@ -178,3 +178,32 @@ select {
     margin-bottom: 0.75rem;
     border: 1px solid #d4a;
 }
+
+.contact-card__name {
+    margin: 0.5rem 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.contact-card__email,
+.contact-card__phone {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+}
+
+.contact-card__email a,
+.contact-card__phone a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-card__email a:hover,
+.contact-card__phone a:hover,
+.contact-card__email a:focus,
+.contact-card__phone a:focus {
+    text-decoration: underline;
+    color: #004999;
+}
