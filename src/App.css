@@ -138,3 +138,10 @@ select {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+.field__hint {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top:0.25rem;
+    font-style:italic
+}

@@ -61,14 +61,23 @@ const App = () => {
                     <input
                         id="search-input"
                         type="search"
-                        placeholder="Search by name or phone"
+                        placeholder="Search by business name or phone number"
+                        aria-label="Search business directory by name or phone number"
+                        /** plug to result counts */
+                        aria-describedby="search-results"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         data-testid="search-input"
                     />
                 </div>
 
-                <p className="search__results" data-testid="results-count">
+                <p /** className="search__results" data-testid="results-count"> comment in case of oopsies */
+                   id = "search-results"
+                   className="search__results"
+                   data-testid="results-count"
+                   role="status"
+                   aria-live="polite" /** announce changes */
+                 > 
                     Showing {contacts.length}{" "}
                     {contacts.length === 1 ? "result" : "results"}
                     {loading ? " (loading...)" : ""}
@@ -86,45 +95,79 @@ const App = () => {
                 <h2 id="form-heading">Add a Business</h2>
                 <form className="form__body" onSubmit={handleSubmit} noValidate>
                     <div className="field">
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">
+                            Business Name <span aria-label="required">*</span>
+                            </label>
                         <input
                             id="name"
                             name="name"
+                            type="text"
+                            placeholder = "Joe's Pizza"
+                            aria-required="true"
+                            aria-describedby="name-hint"
                             value={form.name}
-                            onChange={(e) => setForm({ ...form, name: e.target.value })}
+                            onChange={(e) =>
+                                setForm({ ...form, name: e.target.value })}
                             required
                             minLength={2}
                         />
+                        <span id="name-hint" className="field__hint">
+                            Minimum 2 characters
+                        </span>
+
                     </div>
                     <div className="field">
-                        <label htmlFor="phone">Phone</label>
+                        <label htmlFor="phone">
+                            Phone Number <span aria-label="required">*</span>
+                            </label>
                         <input
                             id="phone"
                             name="phone"
+                            type="tel"
                             inputMode="tel"
                             placeholder="(555) 555-5555"
+                            aria-required="true"
+                            aria-describedby="phone-hint"
                             value={form.phone}
                             onChange={(e) =>
                                 setForm({ ...form, phone: e.target.value })
                             }
                             required
                         />
+                        <span id="phone-hint" className="field__hint">
+                            Format: (555) 555-5555
+                        </span>
+
                     </div>
                     <div className="field">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">
+                            Email Address
+                        </label>
+
                         <input
                             id="email"
                             name="email"
                             type="email"
+                            placeholder="contact@business.com"
+                            aria-describedby="email-hint"
                             value={form.email}
                             onChange={(e) =>
                                 setForm({ ...form, email: e.target.value })
                             }
                         />
+                        <span id="email-hint" className="field__hint">
+                            Must include @ symbol
+                        </span>
+
                     </div>
                     <div className="form__actions">
-                        <button className="btn" type="submit" data-testid="btn-add">
-                            Add Contact
+                        <button 
+                            className="btn"
+                            type="submit"
+                            data-testid="btn-add"
+                            aria-label="Add business to directory"
+                            >   
+                            Add Listing
                         </button>
                     </div>
                 </form>
