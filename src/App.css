@@ -65,28 +65,47 @@
     background: #fff;
 }
 
+.search h2 {
+    margin-top: 0;
+    color: var(--fg);
+    font-size: 1.5rem;
+}
+
 .search__controls {
     display: grid;
-    grid-template-columns: minmax(140px, 1fr) 1fr minmax(120px, 1fr) 1fr;
+    grid-template-columns: 140px 1fr;
     gap: 0.5rem 1rem;
     align-items: center;
 }
 
+.search__controls label {
+    font-weight: bold;
+}
+
 .search__results {
-    color: #888;
+    color: var(--muted);
+    margin-top: 1rem;
+    font-style: italic;
 }
 
 .contacts {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+}
+
+contacts h2 {
+    font-size: 1.75rem;
+    color: var(--fg);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.5rem;
 }
 
 .contacts__grid {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1rem 0 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
 }
 
 .contact-card {
