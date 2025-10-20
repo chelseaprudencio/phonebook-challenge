@@ -239,8 +239,11 @@ select {
 
 .page__footer {
     margin-top: 3rem;
-    color: #777;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border);
+    color: var(--muted);
     text-align: center;
+    font-style: italic;
 }
 
 @media (max-width: 720px) {
