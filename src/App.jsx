@@ -148,9 +148,67 @@ const App = () => {
             </section>
 
             <section className="contacts" aria-labelledby="contacts-heading">
-                <h2 id="contacts-heading">Businesses</h2>
-                <ul className="contacts__grid" role="list">
-                </ul>   
+                <h2 id="contacts-heading">Business Listings</h2>
+
+                {/* for when no contacts match search */}
+                {contacts.length === 0 ? (
+                    <p className="contacts__empty">
+                        No businesses found. Try a different search.
+                    </p>
+                ) : (
+                    /* loop through contact array */
+                    <ul className="contacts__grid" role="list">
+                        {contacts.map((contact) => (
+                            /* one card for each contact */
+                            /* id for aria connection */
+                            /* href for clickability, arial label for context*/
+                            <li
+                                key={contact.id}
+                                className="contact-card"
+                                role = "article"
+                                aria-label={"contact-name: ${contact.name}"}
+                            >
+                                <div
+                                className="contact-card__icon"
+                                aria-hidden="true"
+                                role="img"
+                                aria-label={`${contact.category} icon`}
+                                >
+                                    {contact.photo}
+                            </div>
+
+                            <span className="contact-card__category">
+                                {contact.category}
+                            </span>
+
+                            <h3 
+                                id={`contact-name-${contact.id}`}
+                                className="contact-card__name"
+                            >
+                                {contact.name}
+                            </h3>
+
+                            <p className="contact-card__phone">
+                                <a
+                                    href={`tel:${contact.phone}`}
+                                    aria-label={`Call ${contact.name} at ${contact.phone}`}
+                                >
+                                    📞 {contact.phone}
+                                </a>
+                            </p>
+
+                            <p className="contact-card__email">
+                                <a
+                                    href={`mailto:${contact.email}`}
+                                    aria-label={`Email ${contact.name} at ${contact.email}`}
+                                >
+                                    📧 {contact.email}
+                                </a>
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+                )}            
             </section>
 
             <section className="form" aria-labelledby="form-heading">
