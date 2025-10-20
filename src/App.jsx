@@ -40,8 +40,8 @@ const App = () => {
     return (
         <main className="page" data-testid="page-root">
             <header className="page__header">
-                <h1 className="page__title">Phonebook Challenge</h1>
-                <p className="page__subtitle">Build a simple contact directory</p>
+                <h1 className="page__title">Yellow Book Directory</h1>
+                <p className="page__subtitle">Like the ones in the movie</p>
             </header>
 
             <section className="search" aria-labelledby="search-heading">
