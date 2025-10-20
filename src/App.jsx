@@ -80,7 +80,7 @@ const FALLBACK_CONTACTS = [
         id: 9,
         name: "Happy Dry Cleaner",
         phone: "(212) 351-8164",
-        email: "happycleanersk@gmail.com",
+        email: "happycleaners@gmail.com",
         photo: "👕",
         category: "Services"
     },
