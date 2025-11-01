@@ -106,6 +106,24 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState(0);
 
     const [form, setForm] = useState({ name: "", phone: "", email: "" });
+
+    const filteredContacts = useMemo(() => {
+        if (!query) return contacts;
+
+        const searchTerm = query.toLowerCase();
+        return contacts.filter(
+            (contact) =>
+                contact.name.toLowerCase().includes(searchTerm) ||
+                contact.phone.includes(searchTerm)
+        );
+    }, [contacts, query]);
+
+    const currentContact = filteredContacts[currentPage];
+
+    const totalPages = filteredContacts.length;
+    const hasPrevious = currentPage > 0;
+    const hasNext = currentPage < totalPages - 1;
+
     function handleSubmit(e) {
         e.preventDefault();
         // Add contact submission logic here
