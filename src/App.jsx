@@ -189,65 +189,114 @@ const App = () => {
             <section className="contacts" aria-labelledby="contacts-heading">
                 <h2 id="contacts-heading">Business Listings</h2>
 
-                {/* for when no contacts match search */}
-                {contacts.length === 0 ? (
+                 {filteredContacts.length === 0 ? (
                     <p className="contacts__empty">
                         No businesses found. Try a different search.
                     </p>
                 ) : (
-                    /* loop through contact array */
-                    <ul className="contacts__grid" role="list">
-                        {contacts.map((contact) => (
-                            /* one card for each contact */
-                            /* id for aria connection */
-                            /* href for clickability, arial label for context*/
-                            <li
-                                key={contact.id}
-                                className="contact-card"
-                                role = "article"
-                                aria-label={"contact-name: ${contact.name}"}
+                    <>
+                        {/* Pagination Controls - Top */}
+                        <nav className="pagination" aria-label="Contact pagination">
+                            <button
+                                className="btn"
+                                onClick={handlePrevious}
+                                disabled={!hasPrevious}
+                                aria-label="Go to previous contact"
+                                data-testid="btn-previous"
                             >
-                                <div
-                                className="contact-card__icon"
-                                aria-hidden="true"
-                                role="img"
-                                aria-label={`${contact.category} icon`}
-                                >
-                                    {contact.photo}
-                            </div>
-
-                            <span className="contact-card__category">
-                                {contact.category}
+                                ← Previous
+                            </button>
+                
+                            <span className="pagination__info" aria-live="polite">
+                                Contact {currentPage + 1} of {totalPages}
                             </span>
-
-                            <h3 
-                                id={`contact-name-${contact.id}`}
-                                className="contact-card__name"
+                
+                            <button
+                                className="btn"
+                                onClick={handleNext}
+                                disabled={!hasNext}
+                                aria-label="Go to next contact"
+                                data-testid="btn-next"
                             >
-                                {contact.name}
-                            </h3>
+                                Next →
+                            </button>
+                        </nav>
 
-                            <p className="contact-card__phone">
-                                <a
-                                    href={`tel:${contact.phone}`}
-                                    aria-label={`Call ${contact.name} at ${contact.phone}`}
+                        {/* Single Contact Display */}
+                        {currentContact && (
+                            <ul className="contacts__grid" role="list">
+                                <li
+                                    key={currentContact.id}
+                                    className="contact-card"
+                                    role="article"
+                                    aria-label={`Contact: ${currentContact.name}`}
                                 >
-                                    📞 {contact.phone}
-                                </a>
-                            </p>
+                                    <div
+                                        className="contact-card__icon"
+                                        role="img"
+                                        aria-label={`${currentContact.category} icon`}
+                                    >
+                                        {currentContact.photo}
+                                    </div>
 
-                            <p className="contact-card__email">
-                                <a
-                                    href={`mailto:${contact.email}`}
-                                    aria-label={`Email ${contact.name} at ${contact.email}`}
-                                >
-                                    📧 {contact.email}
-                                </a>
-                            </p>
-                        </li>
-                    ))}
-                </ul>
-                )}            
+                                    <span className="contact-card__category">
+                                        {currentContact.category}
+                                    </span>
+
+                                    <h3
+                                        id={`contact-name-${currentContact.id}`}
+                                        className="contact-card__name"
+                                    >
+                                        {currentContact.name}
+                                    </h3>
+
+                                    <p className="contact-card__phone">
+                                        <a
+                                            href={`tel:${currentContact.phone}`}
+                                            aria-label={`Call ${currentContact.name} at ${currentContact.phone}`}
+                                        >
+                                            📞 {currentContact.phone}
+                                        </a>
+                                    </p>
+
+                                    <p className="contact-card__email">
+                                        <a
+                                            href={`mailto:${currentContact.email}`}
+                                            aria-label={`Email ${currentContact.name} at ${currentContact.email}`}
+                                        >
+                                            📧 {currentContact.email}
+                                        </a>
+                                    </p>
+                                </li>
+                            </ul>
+                        )}
+
+                        {/* Pagination Controls - Bottom (optional for convenience) */}
+                        <nav className="pagination" aria-label="Contact pagination">
+                            <button
+                                className="btn"
+                                onClick={handlePrevious}
+                                disabled={!hasPrevious}
+                                aria-label="Go to previous contact"
+                            >
+                                ← Previous
+                            </button>
+                
+                            <span className="pagination__info" aria-live="polite">
+                                Contact {currentPage + 1} of {totalPages}
+                            </span>
+                
+                            <button
+                                className="btn"
+                                onClick={handleNext}
+                                disabled={!hasNext}
+                                aria-label="Go to next contact"
+                            >
+                                Next →
+                            </button>
+                        </nav>
+                    </>
+                )}
             </section>
 
             <section className="form" aria-labelledby="form-heading">

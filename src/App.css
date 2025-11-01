@@ -190,6 +190,35 @@ contacts h2 {
     color: #004499;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #fff;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+}
+.pagination__info {
+    font-weight: bold;
+    color: var(--fg);
+    min-width: 120px;
+    text-align: center;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #e0e0e0;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 .form {
     margin-top: 2.5rem;
     border-top: 3px solid var(--accent);
