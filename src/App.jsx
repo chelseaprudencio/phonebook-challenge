@@ -119,10 +119,21 @@ const App = () => {
     }, [contacts, query]);
 
     const currentContact = filteredContacts[currentPage];
-
     const totalPages = filteredContacts.length;
     const hasPrevious = currentPage > 0;
     const hasNext = currentPage < totalPages - 1;
+
+    function handlePrevious() {
+        if (hasPrevious) {
+            setCurrentPage((prev) => prev - 1);
+        }
+    }
+
+    function handleNext() {
+        if (hasNext) {
+            setCurrentPage((prev) => prev + 1);
+        }
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
