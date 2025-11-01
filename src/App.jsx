@@ -101,10 +101,13 @@ const App = () => {
 
     useEffect(() => {}, []);
 
+    useEffect(() => {
+        setCurrentPage(0);
+    }, [query, contacts]);
+    
+
     const [query, setQuery] = useState("");
-
     const [currentPage, setCurrentPage] = useState(0);
-
     const [form, setForm] = useState({ name: "", phone: "", email: "" });
 
     const filteredContacts = useMemo(() => {
