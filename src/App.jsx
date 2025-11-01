@@ -166,17 +166,23 @@ const App = () => {
                     />
                 </div>
 
-                <p /** className="search__results" data-testid="results-count"> comment in case of oopsies */
-                   id = "search-results"
-                   className="search__results"
-                   data-testid="results-count"
-                   role="status"
-                   aria-live="polite" /** announce changes */
+                <p 
+                    id="search-results"
+                    className="search__results"
+                    data-testid="results-count"
+                    role="status"
+                    aria-live="polite"
                  > 
-                    Showing {contacts.length}{" "}
-                    {contacts.length === 1 ? "result" : "results"}
-                    {loading ? " (loading...)" : ""}
-                    {error ? ` (error: ${error})` : ""}
+                 {filteredContacts.length > 0 ? (
+                    <> 
+                        Showing page {currentPage + 1} of {totalPages}
+                        ({filteredContacts.length} total {filteredContacts.length == 1 ? "result": "results"})
+                    </>
+                ) : (
+                    "No results found."
+                )}
+                {loading ? " (loading...)" : ""}
+                {error ? ` (error: ${error})` : ""}
                 </p>
             </section>
 
