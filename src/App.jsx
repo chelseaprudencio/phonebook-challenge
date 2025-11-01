@@ -103,6 +103,8 @@ const App = () => {
 
     const [query, setQuery] = useState("");
 
+    const [currentPage, setCurrentPage] = useState(0);
+
     const [form, setForm] = useState({ name: "", phone: "", email: "" });
     function handleSubmit(e) {
         e.preventDefault();
